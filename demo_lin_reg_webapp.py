@@ -18,4 +18,4 @@ salary = model.predict([[exp]])
 
 # st.write("b0 is", round(model.intercept_, 3))
 # st.write("b1 is", round(model.coef_[0], 3))
-st.write("Salary is", salary)
+st.write("Salaryis", salary)
