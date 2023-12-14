@@ -1,0 +1,104 @@
+if you want to view numeric columns
+file_name.select_dtypes(include='number') # to view numeric data
+
+file_name.select_dtypes(include='object') # to view categorical data
+
+mpg_data.describe(include='number')  ## summary statistics of numeric columns
+
+mpg_data.describe(include='object')  ## summary statistics of categorical columns
+
+mpg_data['weight'] # to view column data
+
+# to calculatemean, mode , median of specific column
+# Calculate mean, median, and mode of a specific column
+mean_mpg = mpg_data["mpg"].mean()
+median_mpg = mpg_data["mpg"].median()
+mode_mpg = mpg_data["mpg"].mode().values[0]
+
+print("Mean MPG:", mean_mpg)
+print("Median MPG:", median_mpg)
+print("Mode MPG:", mode_mpg)
+
+# mpg_wt_mean = mpg_data.weight.mean() # calculating mean of particular column
+
+To calculate mean of column
+
+mpg_data.weight.max(), mpg_data.weight.min()
+
+#to calculate range a particular column
+mpg_data.weight.max() - mpg_data.weight.min()
+
+# calculate range of all columns together
+mpg_data_num.max() - mpg_data_num.min()
+
+# to reshape rows and columns
+arr = np.arange(24).reshape(4,-1)
+arr
+np.var(arr, axis=1)
+
+# to calculate standard deviation for all columns
+mpg_data_num.std()
+
+# variance of individual column
+mpg_data["mpg"].var()
+
+# compute variance of all num columns together
+mpg_data_num.var()
+
+mpg_data.mpg.var(), mpg_data.mpg.std()**2
+
+mpg_data_num.min()
+
+# Calculate range, variance, and standard deviation of a specific column
+range_mpg = mpg_data["mpg"].max() - mpg_data["mpg"].min()
+variance_mpg = mpg_data["mpg"].var()
+std_dev_mpg = mpg_data["mpg"].std()
+
+
+print("Range of MPG:", range_mpg)
+print("Variance of MPG:", variance_mpg)
+print("Standard Deviation of MPG:", std_dev_mpg)
+
+np.quantile(mpg_data["mpg"],0.25)
+
+np.quantile(mpg_data.mpg,1)
+mpg_data.mpg.max()
+
+# median
+# Q1,Q2,Q3
+# Percentiles
+# Deciles
+# quantiles
+
+np.quantile(mpg_data.mpg,0.5), mpg_data.mpg.median()
+np.quantile(mpg_data.mpg,0.25), np.quantile(mpg_data.mpg,0.5), np.quantile(mpg_data.mpg,0.75)
+np.quantile(mpg_data.mpg,0.1), np.quantile(mpg_data.mpg,0.2),np.quantile(mpg_data.mpg,0.8), np.quantile(mpg_data.mpg,0.9)
+np.quantile(mpg_data.mpg,0.01), np.percentile(mpg_data["mpg"],1)
+
+# Calculate the 25th, 50th (median), and 75th percentiles of a specific column
+percentiles = np.percentile(mpg_data["mpg"], [25, 50, 75])
+
+print("25th Percentile of MPG:", percentiles[0])
+print("Median (50th Percentile) of MPG:", percentiles[1])
+print("75th Percentile of MPG:", percentiles[2])
+
+# Calculate any quantile in a column. this can be used to get the Q1, Q2, Q3, deciles or any percentiles also.
+
+Q1_mpg = np.quantile(mpg_data["mpg"],0.25)
+median_mpg = np.quantile(mpg_data["mpg"],0.5)
+Q3_mpg = np.quantile(mpg_data["mpg"],0.75)
+
+IQR_mpg = Q3_mpg - Q1_mpg
+
+a_quantile_mpg = np.quantile(mpg_data["mpg"],0.3145)
+
+print("first quartile:", Q1_mpg)
+print("third quartile:", Q3_mpg)
+print("IQR:", IQR_mpg)
+print("median or Q2:", median_mpg)
+
+np.percentile(mpg_data.mpg,25), np.quantile(mpg_data.mpg,0.25)
+
+mpg_data_num.skew()
+
+mpg_data_num.kurt()
