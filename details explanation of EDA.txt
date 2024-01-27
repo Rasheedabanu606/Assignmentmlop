@@ -102,3 +102,5 @@ np.percentile(mpg_data.mpg,25), np.quantile(mpg_data.mpg,0.25)
 mpg_data_num.skew()
 
 mpg_data_num.kurt()
+
+# We can also do Data Visualisations and model fitting 
